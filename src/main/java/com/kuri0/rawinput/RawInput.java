@@ -17,8 +17,7 @@ public class RawInput
     public static final String VERSION = "1.1.1";
     
     public static Mouse mouse;
-
-	public static Controller[] controllers;
+    public static Controller[] controllers;
     // Delta for mouse
     public static int dx = 0;
     public static int dy = 0;
@@ -27,9 +26,9 @@ public class RawInput
     public void init(FMLInitializationEvent event)
     {
     	ClientCommandHandler.instance.registerCommand(new RescanCommand());
-		ClientCommandHandler.instance.registerCommand(new ToggleCommand());
+	ClientCommandHandler.instance.registerCommand(new ToggleCommand());
         Minecraft.getMinecraft().mouseHelper = new RawMouseHelper();
-		controllers = ControllerEnvironment.getDefaultEnvironment().getControllers();
+	controllers = ControllerEnvironment.getDefaultEnvironment().getControllers();
 
         Thread inputThread = new Thread(() -> {
 			while(true){
