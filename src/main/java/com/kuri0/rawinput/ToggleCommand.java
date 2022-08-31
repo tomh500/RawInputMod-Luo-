@@ -33,3 +33,4 @@ public class ToggleCommand extends CommandBase {
     public int getRequiredPermissionLevel() {
         return -1;
     }
+}
