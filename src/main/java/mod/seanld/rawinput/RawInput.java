@@ -1,7 +1,6 @@
-package com.kuri0.rawinput;
+package mod.seanld.rawinput;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.ClientCommandHandler;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -11,11 +10,11 @@ import net.java.games.input.Controller;
 import net.java.games.input.ControllerEnvironment;
 import net.java.games.input.Mouse;
 
-@Mod(modid = RawInput.MODID, version = RawInput.VERSION)
+@Mod(modid = RawInput.MODID, version = RawInput.VERSION, name = "Raw Input", useMetadata = true)
 public class RawInput
 {
     public static final String MODID = "rawinput";
-    public static final String VERSION = "1.1.1";
+    public static final String VERSION = "1.2.0";
     
     public static Mouse mouse;
     public static Controller[] controllers;

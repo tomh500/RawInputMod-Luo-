@@ -1,4 +1,4 @@
-package com.kuri0.rawinput;
+package mod.seanld.rawinput;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;

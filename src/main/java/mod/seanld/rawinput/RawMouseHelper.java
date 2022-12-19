@@ -1,4 +1,4 @@
-package com.kuri0.rawinput;
+package mod.seanld.rawinput;
 import net.minecraft.util.MouseHelper;
 
 public class RawMouseHelper extends MouseHelper {
