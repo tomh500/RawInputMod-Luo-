@@ -14,8 +14,7 @@ import net.java.games.input.Mouse;
 public class RawInput
 {
     public static final String MODID = "rawinput";
-    public static final String VERSION = "1.2.0";
-    
+    public static final String VERSION = "1.3.0";
     public static Mouse mouse;
     public static Controller[] controllers;
     // Delta for mouse
@@ -43,10 +42,12 @@ public class RawInput
 
         Thread inputThread = new Thread(() -> {
 			while(true){
-				if (mouse != null && Minecraft.getMinecraft().currentScreen == null){
+				if (mouse != null && Minecraft.getMinecraft().currentScreen == null) {
 					mouse.poll();
 					dx += (int)mouse.getX().getPollData();
 					dy += (int)mouse.getY().getPollData();
+				} else if (mouse != null) {
+					mouse.poll();
 				} else {
 					getMouse();
 				}
