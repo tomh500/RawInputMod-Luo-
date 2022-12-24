@@ -1,12 +1,10 @@
-package mod.seanld.rawinput;
+package mod.seanld.rawinput.commands;
 
-import net.minecraft.client.Minecraft;
+import mod.seanld.rawinput.RawInputHandler;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.MouseHelper;
 
 public class ToggleCommand extends CommandBase {
     @Override
@@ -21,13 +19,7 @@ public class ToggleCommand extends CommandBase {
 
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-        if (Minecraft.getMinecraft().mouseHelper instanceof RawMouseHelper) {
-            Minecraft.getMinecraft().mouseHelper = new MouseHelper();
-            sender.sendMessage(new TextComponentString("Toggled OFF"));
-        } else {
-            Minecraft.getMinecraft().mouseHelper = new RawMouseHelper();
-            sender.sendMessage(new TextComponentString("Toggled ON"));
-        }
+        RawInputHandler.toggleRawInput();
     }
     @Override
     public int getRequiredPermissionLevel() {
