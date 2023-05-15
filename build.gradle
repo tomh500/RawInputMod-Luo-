@@ -14,7 +14,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "1.4.1"
+version = "1.4.2"
 group= "mod.seanld.rawinput" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "rawinput"
 
@@ -115,3 +115,22 @@ publishing {
         }
     }
 }
+
+apply plugin: 'idea'
+idea {
+    module {
+        inheritOutputDirs = true
+    }
+}
+subprojects {
+    apply plugin: 'idea'
+}
+
+task prepareAssets(type: Copy) {
+    group = 'build'
+    from project.file('src/main/resources')
+    into project.file('build/classes/java/main')
+}
+
+classes.dependsOn(prepareAssets)
+

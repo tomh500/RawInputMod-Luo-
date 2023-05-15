@@ -27,7 +27,7 @@ public class KeybindHandler {
         }
 
         if (rescanKey.isPressed()) {
-            RawInputHandler.rescan();
+            RawInputHandler.getMouse();
         }
     }
 }
